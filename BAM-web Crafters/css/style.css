@@ -1,0 +1,511 @@
+/* ==========================================
+   1. ROOT VARIABLES & GLOBAL STYLES
+   ========================================== */
+:root {
+    --primary-color: #0284c7;      /* Omani Coastal Blue */
+    --secondary-color: #047857;    /* Omani Nature Green */
+    --accent-color: #d97706;       /* Omani Desert Gold */
+    --dark-color: #1e293b;         /* Professional Dark Slate */
+    --light-color: #f8fafc;        /* Clean Light Background */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    width: 90%;
+    flex: 1;
+}
+
+/* ==========================================
+   2. HEADER, LOGO & NAVIGATION MENU
+   ========================================== */
+header {
+    background-color: var(--dark-color);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+.logo-area h1 {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Navigation Menu - High Contrast & Clear Visibility */
+nav.main-nav {
+    background-color: transparent;
+    padding: 0;
+}
+
+nav.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav.main-nav ul li a {
+    color: #ffffff !important;
+    background-color: #0f172a !important; /* خلفية داكنة جداً تضمن وضوح النص 100% */
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: inline-block;
+}
+
+nav.main-nav ul li a:link,
+nav.main-nav ul li a:visited {
+    color: #ffffff !important;
+}
+
+nav.main-nav ul li a:hover {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color);
+}
+
+nav.main-nav ul li a:active {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Active Page Indicator */
+nav.main-nav ul li a.active {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    border-color: var(--accent-color);
+}
+
+/* ==========================================
+   3. HERO & HOMEPAGE STYLING
+   ========================================== */
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(30, 41, 59, 0.75), rgba(30, 41, 59, 0.75)), url('../images/oman.png') no-repeat center center/cover;
+    color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #e2e8f0;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #026aa7;
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #b45309;
+}
+
+/* Intro & Features Grid */
+.intro-section {
+    margin-bottom: 40px;
+}
+
+.intro-section h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.feature-box {
+    background-color: var(--light-color);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.feature-box h4 {
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+/* Oman Essence Poetic Box */
+.oman-essence-box {
+    margin: 30px 0;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #edf2f7 100%);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.oman-essence-box blockquote {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    color: var(--dark-color);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Featured Highlights */
+.highlight-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: var(--light-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.highlight-card img {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.highlight-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.highlight-info h4 {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   4. TABLES STYLING
+   ========================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: var(--light-color);
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* ==========================================
+   5. FORMS STYLING
+   ========================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+button[type="submit"], input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #03543f;
+}
+
+.newsletter-section {
+    background-color: var(--light-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 15px auto 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+}
+
+/* ==========================================
+   6. GALLERY & CARDS STYLING
+   ========================================== */
+.gallery-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--light-color);
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.gallery-hero h2 {
+    font-size: 2.2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.gallery-hero p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.map-btn {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    margin-top: auto;
+}
+
+.map-btn:hover {
+    background-color: #026aa7;
+}
+
+/* ==========================================
+   7. ABOUT & TEAM STYLING
+   ========================================== */
+.about-hero {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-hero h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-card {
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.team-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. FOOTER STYLING (Fixed & Visible)
+   ========================================== */
+footer {
+    background-color: var(--dark-color) !important;
+    color: black !important;
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+    border-top: 4px solid var(--accent-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
